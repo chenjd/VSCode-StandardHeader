@@ -15,7 +15,7 @@
 	"categories": [
 		"Other"
 	],
-	"resources": [
+	"resources": {
 	    "license": "SEE LICENSE IN LICENSE.md",
 		"bugs": {
 			"url": "https://github.com/chenjd/VSCode-StandardHeader/issues"
@@ -25,15 +25,15 @@
 			"type": "git",
 			"url": "https://github.com/chenjd/VSCode-StandardHeader.git"
 		}
-	],
+	},
 	"activationEvents": [
-		"onCommand:extension.sayHello"
+		"onCommand:extension.insertHeader"
 	],
 	"main": "./out/src/extension",
 	"contributes": {
 		"keybindings": [{
-			"command": "extension.sayHello",
-			"key": "cmd+1",
+			"command": "extension.insertHeader",
+			"key": "shift+cmd+1",
 			"when": "editorTextFocus"
 		}]
 	},

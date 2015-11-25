@@ -15,7 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
 	let headerGen = new HeaderGenerator();
-	var disposable = vscode.commands.registerCommand('extension.sayHello', () => {
+	var disposable = vscode.commands.registerCommand('extension.insertHeader', () => {
 		// The code you place here will be executed every time your command is executed
 		headerGen.insertHeader();
 	});
