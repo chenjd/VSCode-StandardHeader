@@ -1,9 +1,14 @@
 {
-	"name": "standard-header",
-	"displayName": "standard-header",
+	"name": "Standard-Header",
+	"displayName": "Standard-Header",
 	"description": "standard-header",
 	"version": "0.0.1",
-	"publisher": "chenjd",
+	"publisher": "JiadongChen",
+	"icon": "res/mit-license-small.png",
+	"galleryBanner": {
+        "color": "#0000FF",
+        "theme": "dark"
+    },
 	"engines": {
 		"vscode": "^0.10.1"
 	},
@@ -15,10 +20,6 @@
 	],
 	"main": "./out/src/extension",
 	"contributes": {
-		// "commands": [{
-		// 	"command": "extension.sayHello",
-		// 	"title": "Hello World"
-		// }]
 		"keybindings": [{
 			"command": "extension.sayHello",
 			"key": "cmd+1",
