@@ -15,6 +15,17 @@
 	"categories": [
 		"Other"
 	],
+	"resources": [
+	    "license": "SEE LICENSE IN LICENSE.md",
+		"bugs": {
+			"url": "https://github.com/chenjd/VSCode-StandardHeader/issues"
+		},
+		"homepage": "https://github.com/chenjd/VSCode-StandardHeader/blob/master/README.md",
+		"repository": {
+			"type": "git",
+			"url": "https://github.com/chenjd/VSCode-StandardHeader.git"
+		}
+	],
 	"activationEvents": [
 		"onCommand:extension.sayHello"
 	],
