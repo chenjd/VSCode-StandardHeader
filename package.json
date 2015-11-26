@@ -1,8 +1,8 @@
 {
 	"name": "Standard-Header",
 	"displayName": "Standard-Header",
-	"description": "standard-header",
-	"version": "0.0.1",
+	"description": "An extension for adding license headers to source code files.",
+	"version": "0.0.2",
 	"publisher": "JiadongChen",
 	"icon": "res/mit-license-small.png",
 	"galleryBanner": {
