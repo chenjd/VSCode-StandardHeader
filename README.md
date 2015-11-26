@@ -1,7 +1,7 @@
 # README
-### VS Code Standard-Header
+### VS Code LicenseHeader
 
-* https://marketplace.visualstudio.com/items/JiadongChen.Standard-Header
+* https://marketplace.visualstudio.com/items/JiadongChen.LicenseHeader
 * https://github.com/chenjd/VSCode-StandardHeader
 
 An extension for adding license headers to source code files, you should know:
@@ -10,7 +10,7 @@ An extension for adding license headers to source code files, you should know:
 * Default header is The MIT License(MIT)
 
 ###Install
-`ext install standard-header`
+`ext install licenseheader`
 
 ####ScreenShot
 ![Alt text](https://github.com/chenjd/VSCode-StandardHeader/raw/master/res/screenshot.png)

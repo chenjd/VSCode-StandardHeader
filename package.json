@@ -1,6 +1,6 @@
 {
-	"name": "Standard-Header",
-	"displayName": "Standard-Header",
+	"name": "LicenseHeader",
+	"displayName": "LicenseHeader",
 	"description": "An extension for adding license headers to source code files.",
 	"version": "0.0.2",
 	"publisher": "JiadongChen",
