@@ -19,12 +19,12 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 		headerGen.insertHeader();
 	});
-	
+    context.subscriptions.push(headerGen);
 	context.subscriptions.push(disposable);
 }
 
 class HeaderGenerator {
-
+	private _disposable: Disposable;
     public insertHeader() {
 
         // Get the current text editor 
@@ -32,9 +32,20 @@ class HeaderGenerator {
         if (!editor) { 
             return; 
         } 
-        var doc : string = "/*\rThe MIT License (MIT)\ncopyright © 2015 <copyright holders>\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated \ndocumentation files (the “Software”), to deal in the Software without restriction, including without \nlimitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of \nthe Software, and to permit persons to whom the Software is furnished to do so, subject to the following\nconditions:\rThe above copyright notice and this permission notice shall be included in all copies or substantial portions \nof the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED \nTO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT \nSHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN \nACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE \nOR OTHER DEALINGS IN THE SOFTWARE.\n*/\n";
-        editor.edit((eb) => {
-            eb.insert(editor.document.positionAt(0), doc);
+		
+		// Define header content
+        var header : string = "/*\rThe MIT License (MIT)\ncopyright © 2015 <copyright holders>\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated \ndocumentation files (the “Software”), to deal in the Software without restriction, including without \nlimitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of \nthe Software, and to permit persons to whom the Software is furnished to do so, subject to the following\nconditions:\rThe above copyright notice and this permission notice shall be included in all copies or substantial portions \nof the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED \nTO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT \nSHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN \nACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE \nOR OTHER DEALINGS IN THE SOFTWARE.\n*/\n";
+        
+		// Get the document
+		var doc = editor.document;
+		
+		// Insert header
+		editor.edit((eb) => {
+            eb.insert(doc.positionAt(0), header);
         });
     } 
+	
+	 dispose() {
+        this._disposable.dispose();
+    }
 }
